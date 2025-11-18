@@ -12,7 +12,7 @@ plugin = NekroPlugin(
     description="支持多种网站类型的智能网页内容提取工具",
     version="2.0.0",
     author="liugu",
-    url="none"
+    url="https://github.com/liugu2023/nekro_agent_web_reader"
 )
 
 # 动态导入外部依赖

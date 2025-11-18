@@ -228,7 +228,7 @@
 
 ## 技术支持
 
-- **问题反馈**: [GitHub Issues](https://github.com/your-repo/issues)
+- **问题反馈**: [GitHub Issues](https://github.com/liugu2023/nekro_agent_web_reader/issues)
 - **插件文档**: 参见 PLUGIN_README.md 开发文档
 - **依赖库**: requests, beautifulsoup4
 
