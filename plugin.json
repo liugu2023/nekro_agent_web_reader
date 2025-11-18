@@ -1,0 +1,112 @@
+{
+    "name": "网页内容读取器",
+    "description": "通过外部传入网址来读取网页内容，支持内容提取、错误处理和多格式输出",
+    "version": "1.0.0",
+    "author": "liugu",
+    "main": "__init__.py",
+    "dependencies": {
+        "requests": ">=2.25.0,<3.0.0"
+    },
+    "methods": [
+        {
+            "name": "fetch_webpage",
+            "description": "读取网页内容",
+            "parameters": {
+                "url": {
+                    "type": "string",
+                    "description": "要读取的网址",
+                    "required": true
+                },
+                "raw_html": {
+                    "type": "boolean",
+                    "description": "是否返回原始HTML内容，默认为False（返回纯文本）",
+                    "required": false,
+                    "default": false
+                },
+                "timeout": {
+                    "type": "integer",
+                    "description": "请求超时时间（秒），默认使用配置值",
+                    "required": false,
+                    "default": null
+                }
+            },
+            "return": {
+                "type": "string",
+                "description": "网页内容或错误信息"
+            }
+        },
+        {
+            "name": "extract_webpage_text",
+            "description": "提取网页纯文本内容",
+            "parameters": {
+                "url": {
+                    "type": "string",
+                    "description": "要提取的网址",
+                    "required": true
+                },
+                "max_length": {
+                    "type": "integer",
+                    "description": "返回内容的最大长度，默认为2000字符",
+                    "required": false,
+                    "default": 2000
+                },
+                "timeout": {
+                    "type": "integer",
+                    "description": "请求超时时间（秒），默认使用配置值",
+                    "required": false,
+                    "default": null
+                }
+            },
+            "return": {
+                "type": "string",
+                "description": "网页纯文本内容或错误信息"
+            }
+        },
+        {
+            "name": "get_webpage_info",
+            "description": "获取网页基本信息",
+            "parameters": {
+                "url": {
+                    "type": "string",
+                    "description": "要获取信息的网址",
+                    "required": true
+                },
+                "timeout": {
+                    "type": "integer",
+                    "description": "请求超时时间（秒），默认使用配置值",
+                    "required": false,
+                    "default": null
+                }
+            },
+            "return": {
+                "type": "string",
+                "description": "网页基本信息或错误信息"
+            }
+        }
+    ],
+    "config": {
+        "DEFAULT_TIMEOUT": {
+            "type": "integer",
+            "title": "默认请求超时时间",
+            "description": "HTTP请求的默认超时时间（秒）",
+            "default": 30,
+            "minimum": 5,
+            "maximum": 300
+        },
+        "MAX_CONTENT_LENGTH": {
+            "type": "integer",
+            "title": "最大内容长度",
+            "description": "返回内容的最大字符数，防止内存溢出",
+            "default": 10000,
+            "minimum": 1000,
+            "maximum": 100000
+        },
+        "USER_AGENT": {
+            "type": "string",
+            "title": "用户代理字符串",
+            "description": "HTTP请求时使用的User-Agent头",
+            "default": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36"
+        }
+    },
+    "enabled": true
+}
