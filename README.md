@@ -18,20 +18,7 @@
 在对话中使用命令：
 
 ```
-/读取网页 https://example.com
-```
-
-或者使用函数调用：
-
-```python
-# 读取网页内容
-content = await fetch_webpage(url="https://example.com")
-
-# 获取原始HTML
-html = await fetch_webpage(url="https://example.com", raw_html=True)
-
-# 自定义超时时间
-content = await fetch_webpage(url="https://example.com", timeout=60)
+读取网页 https://example.com
 ```
 
 ### 使用场景
@@ -101,7 +88,7 @@ content = await fetch_webpage(url="https://example.com", timeout=60)
 ### 读取新闻网站
 
 ```
-/读取网页 https://tech.sina.com.cn/
+读取网页 https://tech.sina.com.cn/
 ```
 
 **返回结果**：
@@ -131,7 +118,7 @@ content = await fetch_webpage(url="https://example.com", timeout=60)
 ### 读取技术文档
 
 ```
-/读取网页 https://docs.python.org/3/tutorial/
+读取网页 https://docs.python.org/3/tutorial/
 ```
 
 **AI 的处理过程**：
@@ -211,21 +198,6 @@ content = await fetch_webpage(url="https://example.com", timeout=60)
 - **技术文档**: 超时时间 60s，内容长度 20000-30000  
 - **快速预览**: 超时时间 15s，内容长度 5000-8000
 - **详细分析**: 超时时间 120s，内容长度 50000+
-
-### 3. 批量处理技巧
-
-```python
-# 批量读取多个网页
-urls = [
-    "https://news.site1.com/article1",
-    "https://news.site2.com/article2",
-    "https://blog.site3.com/post3"
-]
-
-for url in urls:
-    content = await fetch_webpage(url)
-    # 处理每个网页的内容
-```
 
 ### 4. 内容后处理
 
